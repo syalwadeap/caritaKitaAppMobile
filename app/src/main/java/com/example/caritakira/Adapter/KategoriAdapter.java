@@ -43,6 +43,7 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.MyView
             public void onClick(View view) {
                 Intent mIntent = new Intent(view.getContext(), PostKategoriActivity.class);
                 mIntent.putExtra("Id", mKategoriList.get(position).getIdkategori());
+                mIntent.putExtra("nama", mKategoriList.get(position).getNama());
                 view.getContext().startActivity(mIntent);
             }
         });

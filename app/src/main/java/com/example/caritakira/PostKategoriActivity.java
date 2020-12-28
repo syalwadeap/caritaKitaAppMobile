@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.caritakira.Adapter.PostAdapter;
 import com.example.caritakira.Model.Post;
@@ -26,17 +27,21 @@ public class PostKategoriActivity extends AppCompatActivity {
     private PostAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     public static PostKategoriActivity pk;
+    private TextView kategori;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_kategori);;
         int katId = getIntent().getIntExtra("Id",1);
+        String namaKategori = getIntent().getStringExtra("nama");
+        kategori = (TextView) findViewById(R.id.tvNamaKategori);
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mApiInterface = ApiClient.getClient().create(ApiInterface.class);
         pk=this;
+        kategori.setText("Kategori "+namaKategori);
         refresh(katId);
     }
 

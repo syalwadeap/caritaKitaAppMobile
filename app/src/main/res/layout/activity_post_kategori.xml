@@ -6,9 +6,19 @@
     android:layout_height="match_parent"
     tools:context="com.example.caritakira.PostKategoriActivity">
 
+    <TextView
+        android:id="@+id/tvNamaKategori"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"></androidx.recyclerview.widget.RecyclerView>
+        android:scrollbars="vertical"
+        android:layout_below="@+id/tvNamaKategori"/>
 </RelativeLayout>
