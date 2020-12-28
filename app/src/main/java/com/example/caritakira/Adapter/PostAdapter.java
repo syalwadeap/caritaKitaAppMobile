@@ -103,7 +103,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                 String filter = constraint.toString().toLowerCase().trim();
 
                 for(Post post : mPostListFull){
-                    if(post.getJudul().toLowerCase().contains(filter)){
+                    if(post.getJudul().toLowerCase().contains(filter)
+                            || post.getKategori().getNama().toLowerCase().contains(filter)
+                            || post.getPenulis().getUser().getNama().toLowerCase().contains(filter)){
                         filteredPost.add(post);
                     }
                 }
